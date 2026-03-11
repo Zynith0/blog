@@ -85,11 +85,24 @@ const posts = (await getCollection('blog')).sort(
 					font-size: 1.563em;
 				}
 			}
+			h1 {
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
 		<Header currentPath={Astro.url.pathname} />
 		<main>
+			<h1 class="animate">Hello!</h1>
+			<p class="animate">
+				I'm a developer with not a ton of experience, but I'm still focusing on learning and improving.
+				This is a little about me/blog site for you to get to know me a little better!
+			</p>
+			<p class="animate">
+				Feel free to check out my <a href="https://github.com/Zynith0">Github</a> to see what I'm working on.
+				I'm working on things almost every day, but a lot of them are private. My current biggest project is a 
+				matrix client.
+			</p>
 			<section>
 				<ul>
 					{
@@ -97,10 +110,10 @@ const posts = (await getCollection('blog')).sort(
 							<li>
 								<a href={`/zynith/blog/${post.id}/`}>
 									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
+										<Image width={720} height={360} src={post.data.heroImage} alt="" class="animate" />
 									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
+									<h4 class="title animate">{post.data.title}</h4>
+									<p class="date animate">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
 								</a>

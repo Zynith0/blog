@@ -4,21 +4,71 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+/* thanks to markhorn-dev for this animation */
+.animate {
+	@apply opacity-0 translate-y-3;
+	@apply transition-all duration-700 ease-out;
+}
+
+.animate.show {
+	@apply opacity-100 translate-y-0;
+}
 
 :root {
-	--accent: #31748f;
-	--accent-dark: #000d8a;
-	--black: #eb6f92;
-	--gray: 96, 115, 159;
-	--gray-light: #1f1d2e;
-	--gray-dark: #e0def4;
-	--gray-gradient: #191724;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px
-		rgba(var(--gray), 33%);
+	/* Rosé Pine Dawn */
+	--rp-base: #faf4ed;
+	--rp-surface: #fffaf3;
+	--rp-overlay: #f2e9e1;
+	--rp-muted: #9893a5;
+	--rp-subtle: #797593;
+	--rp-text: #575279;
+	--rp-love: #b4637a;
+	--rp-gold: #ea9d34;
+	--rp-rose: #d7827e;
+	--rp-pine: #286983;
+	--rp-foam: #56949f;
+	--rp-iris: #907aa9;
+	--rp-highlight-low: #f4ede8;
+	--rp-highlight-med: #dfdad9;
+	--rp-highlight-high: #cecacd;
 }
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* Rosé Pine */
+		--rp-base: #191724;
+		--rp-surface: #1f1d2e;
+		--rp-overlay: #26233a;
+		--rp-muted: #6e6a86;
+		--rp-subtle: #908caa;
+		--rp-text: #e0def4;
+		--rp-love: #eb6f92;
+		--rp-gold: #f6c177;
+		--rp-rose: #ebbcba;
+		--rp-pine: #31748f;
+		--rp-foam: #9ccfd8;
+		--rp-iris: #c4a7e7;
+		--rp-highlight-low: #21202e;
+		--rp-highlight-med: #403d52;
+		--rp-highlight-high: #524f67;
+	}
+}
+
 @font-face {
 	/* font-family: "Montserrat", sans-serif; */
 	font-family: "Dosis", sans-serif;
@@ -43,11 +93,11 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: var(--gray-gradient);
+	background: var(--rp-base);
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: var(--gray-dark);
+	color: var(--rp-subtle);
 	font-size: 20px;
 	line-height: 1.7;
 }
@@ -64,7 +114,7 @@ h4,
 h5,
 h6 {
 	margin: 0 0 0.5rem 0;
-	color: var(--black);
+	color: var(--rp-text);
 	line-height: 1.2;
 }
 h1 {
@@ -87,10 +137,10 @@ b {
 	font-weight: 700;
 }
 a {
-	color: var(--accent);
+	color: var(--rp-foam);
 }
 a:hover {
-	color: var(--accent);
+	color: var(--rp-iris);
 }
 p {
 	margin-bottom: 1em;
