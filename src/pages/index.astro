@@ -105,7 +105,7 @@ const posts = (await getCollection('blog')).sort(
 		<Header currentPath={Astro.url.pathname} />
 		<main>
 			<div id="about_div">
-				<Image id="profile_picture" class="animate" width={150} height={150} src={ProfilePicture} alt="" />
+				<Image id="profile_picture" class={"animate"} width={150} height={150} src={ProfilePicture} alt="" />
 				<h1 class="animate">Hello!</h1>
 				<p class="animate about_me">
 				I'm a developer with not a ton of experience,<br> but I'm still focusing on learning and improving.<br>
