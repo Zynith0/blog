@@ -30,7 +30,6 @@
 }
 
 :root {
-	/* Rosé Pine Dawn */
 	--rp-base: #faf4ed;
 	--rp-surface: #fffaf3;
 	--rp-overlay: #f2e9e1;
@@ -50,7 +49,6 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		/* Rosé Pine */
 		--rp-base: #191724;
 		--rp-surface: #1f1d2e;
 		--rp-overlay: #26233a;
